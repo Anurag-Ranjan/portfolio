@@ -56,7 +56,7 @@ const SECTION_IDS = ["about", "projects", "skills", "experience"];
 export default function Header() {
 	const [scrolled, setScrolled] = useState(false);
 	const [heroPassed, setHeroPassed] = useState(false);
-	const [activeSection, setActiveSection] = useState("");
+	const [activeSection, setActiveSection] = useState("about");
 	const [floatingStyle, setFloatingStyle] = useState(null);
 	const ratiosRef = useRef({});
 	const navbarMarkerRef = useRef(null);
@@ -90,6 +90,10 @@ export default function Header() {
 						best = id;
 					}
 				});
+
+				if (!best && window.scrollY < window.innerHeight * 0.5) {
+					best = "about";
+				}
 
 				setActiveSection(best);
 			},
