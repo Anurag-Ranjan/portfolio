@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { PROFILE_IMG } from "../constants/profileimage";
 
 /**
  * HeroSection
@@ -26,43 +26,6 @@ import { useEffect, useState } from "react";
  *   <link rel="preconnect" href="https://fonts.googleapis.com">
  *   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
  */
-
-const PROFILE_IMG =
-	"https://lh3.googleusercontent.com/aida-public/AB6AXuB-a-V7OAB76brjiuCI_A3v57m1mWXqUmMFGbUSNYSSZAbkjmXxEaa78GJ9k2H38SWaNi8MV71DUsNfBYxpwvgnWcCapqHl1BYwZdT9Cc9v8AaxQZ4kBlPghMs3m5kHrnWlUorEEOAleeSE-4cJ_8AYDJ-iFO4Y5SThlu1mbFrMw874GAh5_mjGEzz56V1B0jL3kTud-jNPXJWOqauFDNRVSOojenLzLKGB4BZQVSVGiXSQJcSp4nM0kg42t0Ehm8sxyx8O7lZSvk8H";
-
-function IconTerminal({ className = "" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			className={className}
-		>
-			<polyline points="4 17 10 11 4 5" />
-			<line x1="12" y1="19" x2="20" y2="19" />
-		</svg>
-	);
-}
-
-function IconSettings({ className = "" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			className={className}
-		>
-			<circle cx="12" cy="12" r="3" />
-			<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-		</svg>
-	);
-}
 
 function IconFolderOpen({ className = "" }) {
 	return (
@@ -120,98 +83,19 @@ function IconCode({ className = "" }) {
 // ---- main component -----------------------------------------------------
 
 export default function HeroSection() {
-	const [scrolled, setScrolled] = useState(false);
-
-	useEffect(() => {
-		const onScroll = () => setScrolled(window.scrollY > 50);
-		window.addEventListener("scroll", onScroll);
-		return () => window.removeEventListener("scroll", onScroll);
-	}, []);
-
 	return (
 		<div
 			className="font-['JetBrains_Mono',monospace] text-[14px] leading-[1.5] font-normal antialiased min-h-screen flex flex-col relative"
 			style={{ backgroundColor: "#0D1117", color: "#E6EDF3" }}
 		>
-			{/* Top Navigation */}
-			<nav
-				className={`fixed top-0 w-full z-50 transition-all duration-300 py-4 px-4 md:px-12 flex justify-between items-center max-w-[1200px] mx-auto ${
-					scrolled ? "backdrop-blur-md border-b border-[#30363D]" : ""
-				}`}
-				style={
-					scrolled ? { backgroundColor: "rgba(13, 17, 23, 0.9)" } : undefined
-				}
-			>
-				<div className="flex items-center gap-4">
-					<div
-						className={`overflow-hidden rounded-[0.75rem] border border-[#3e4a3c] transition-all duration-300 ${
-							scrolled ? "w-8 h-8 opacity-100 mr-2" : "w-0 h-0 opacity-0"
-						}`}
-					>
-						<img
-							alt="Anurag Ranjan Profile"
-							className="w-full h-full object-cover"
-							src={PROFILE_IMG}
-						/>
-					</div>
-					<div
-						className="text-[20px] leading-[1.4] font-semibold"
-						style={{ color: "#67df70" }}
-					>
-						anurag@workstation:~$
-					</div>
-				</div>
-
-				<div className="hidden md:flex gap-6 border-b border-[#3e4a3c]">
-					<a
-						className="pb-1 text-[12px] leading-none tracking-[0.05em] font-medium cursor-pointer active:opacity-80 transition-colors border-b-2"
-						style={{ color: "#67df70", borderColor: "#67df70" }}
-						href="#about"
-					>
-						01.About
-					</a>
-					<a
-						className="pb-1 text-[12px] leading-none tracking-[0.05em] font-medium cursor-pointer active:opacity-80 transition-colors hover:text-[#67df70]"
-						style={{ color: "#bdcab8" }}
-						href="#projects"
-					>
-						02.Projects
-					</a>
-					<a
-						className="pb-1 text-[12px] leading-none tracking-[0.05em] font-medium cursor-pointer active:opacity-80 transition-colors hover:text-[#67df70]"
-						style={{ color: "#bdcab8" }}
-						href="#skills"
-					>
-						03.Skills
-					</a>
-					<a
-						className="pb-1 text-[12px] leading-none tracking-[0.05em] font-medium cursor-pointer active:opacity-80 transition-colors hover:text-[#67df70]"
-						style={{ color: "#bdcab8" }}
-						href="#experience"
-					>
-						04.Experience
-					</a>
-				</div>
-
-				<div className="flex gap-4">
-					<IconTerminal className="w-5 h-5 cursor-pointer duration-200 hover:text-[#67df70]" />
-					<IconSettings className="w-5 h-5 cursor-pointer duration-200 hover:text-[#67df70]" />
-				</div>
-			</nav>
-
 			{/* Main Content */}
 			<main className="flex-grow pt-32 pb-24 px-4 md:px-12 max-w-[1200px] mx-auto w-full flex flex-col md:flex-row gap-12 items-start justify-center min-h-[80vh]">
 				{/* Profile Image Area */}
 				<div className="w-full md:w-[35%] flex flex-col items-center justify-center shrink-0">
-					<div className="w-64 h-64 md:w-80 md:h-80 rounded-[0.75rem] overflow-hidden border-2 border-[#3e4a3c] shadow-[0_0_15px_rgba(63,185,80,0.2)] transition-all duration-500 ease-in-out relative group">
-						<div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-10 backdrop-blur-sm bg-[#0f150e]/50">
-							<span
-								className="text-[13px] leading-[1.6] font-normal"
-								style={{ color: "#67df70" }}
-							>
-								view_source()
-							</span>
-						</div>
+					<div
+						data-profile-hero
+						className="w-64 h-64 md:w-80 md:h-80 rounded-[0.75rem] overflow-hidden border-2 border-[#3e4a3c] shadow-[0_0_15px_rgba(63,185,80,0.2)] relative invisible"
+					>
 						<img
 							alt="Anurag Ranjan Profile"
 							className="w-full h-full object-cover"
@@ -322,35 +206,11 @@ export default function HeroSection() {
 							<span className="font-bold" style={{ color: "#67df70" }}>
 								anurag@portfolio:~$
 							</span>
-							<span className="text-[#7D8590] ml-2 animate-pulse">_</span>
+							<span className="text-[#67df70] ml-2 animate-[blink_1s_step-start_infinite]">_</span>
 						</div>
 					</div>
 				</div>
 			</main>
-
-			{/* Footer */}
-			<footer
-				className="mt-auto border-t border-[#3e4a3c] flex justify-between items-center px-4 md:px-12 py-2 w-full text-[13px] leading-[1.6] font-normal"
-				style={{ backgroundColor: "#091009" }}
-			>
-				<div className="font-bold" style={{ color: "#a0d39c" }}>
-					SYSTEM STATUS: ONLINE | 2024
-				</div>
-				<div className="hidden md:flex gap-6" style={{ color: "#bdcab8" }}>
-					<span className="hover:opacity-80 transition-opacity cursor-default">
-						Location: India
-					</span>
-					<span className="hover:opacity-80 transition-opacity cursor-default">
-						Education: BIT Sindri
-					</span>
-					<span className="hover:opacity-80 transition-opacity cursor-default">
-						CGPA: 8.23
-					</span>
-				</div>
-				<div className="flex md:hidden" style={{ color: "#bdcab8" }}>
-					India | BIT Sindri | 8.23
-				</div>
-			</footer>
 		</div>
 	);
 }
