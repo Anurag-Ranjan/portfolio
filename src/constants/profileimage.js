@@ -1,2 +1,2 @@
-export const PROFILE_IMG =
-	"https://lh3.googleusercontent.com/aida-public/AB6AXuB-a-V7OAB76brjiuCI_A3v57m1mWXqUmMFGbUSNYSSZAbkjmXxEaa78GJ9k2H38SWaNi8MV71DUsNfBYxpwvgnWcCapqHl1BYwZdT9Cc9v8AaxQZ4kBlPghMs3m5kHrnWlUorEEOAleeSE-4cJ_8AYDJ-iFO4Y5SThlu1mbFrMw874GAh5_mjGEzz56V1B0jL3kTud-jNPXJWOqauFDNRVSOojenLzLKGB4BZQVSVGiXSQJcSp4nM0kg42t0Ehm8sxyx8O7lZSvk8H";
+import profileImg from "../assets/Anurag_portfolio.jpg";
+export const PROFILE_IMG = profileImg;

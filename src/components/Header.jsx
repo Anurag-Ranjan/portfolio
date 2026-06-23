@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { PROFILE_IMG } from "../constants/profileimage";
-import IconTerminal from "./IconTerminal";
-import IconSettings from "./IconSettings";
 
 function IconHamburger({ className }) {
 	return (
@@ -21,26 +19,11 @@ function IconHamburger({ className }) {
 	);
 }
 
-function NavLink({ href, children, active, heroPassed }) {
-	const base = "pb-1 cursor-pointer active:opacity-80 transition-all duration-300";
-	if (heroPassed) {
-		return (
-			<a
-				href={href}
-				className={`${base} text-[20px] leading-[1.4] font-semibold ${
-					active
-						? "text-[#67df70] border-b-2 border-[#67df70]"
-						: "text-[#bdcab8] hover:text-[#67df70]"
-				}`}
-			>
-				{children}
-			</a>
-		);
-	}
+function NavLink({ href, children, active }) {
 	return (
 		<a
 			href={href}
-			className={`${base} text-[12px] leading-none tracking-[0.05em] font-medium ${
+			className={`pb-1 cursor-pointer active:opacity-80 transition-all duration-300 text-[11px] leading-none tracking-[0.05em] font-medium uppercase ${
 				active
 					? "text-[#67df70] border-b-2 border-[#67df70]"
 					: "text-[#bdcab8] hover:text-[#67df70]"
@@ -51,7 +34,7 @@ function NavLink({ href, children, active, heroPassed }) {
 	);
 }
 
-const SECTION_IDS = ["about", "projects", "skills", "experience"];
+const SECTION_IDS = ["about", "projects", "skills", "contact"];
 
 export default function Header() {
 	const [scrolled, setScrolled] = useState(false);
@@ -183,26 +166,19 @@ export default function Header() {
 						</div>
 					</div>
 
-				<div
-					className={`hidden md:flex items-center ${heroPassed ? "gap-8" : "gap-6 border-b border-[#3e4a3c]"}`}
-				>
-					<NavLink href="#about" active={activeSection === "about"} heroPassed={heroPassed}>
-						01.About
+				<div className="hidden md:flex items-center gap-6 ml-auto">
+					<NavLink href="#about" active={activeSection === "about"}>
+						01. ABOUT
 					</NavLink>
-					<NavLink href="#projects" active={activeSection === "projects"} heroPassed={heroPassed}>
-						02.Projects
+					<NavLink href="#projects" active={activeSection === "projects"}>
+						02. PROJECTS
 					</NavLink>
-					<NavLink href="#skills" active={activeSection === "skills"} heroPassed={heroPassed}>
-						03.Skills
+					<NavLink href="#skills" active={activeSection === "skills"}>
+						03. SKILLS
 					</NavLink>
-					<NavLink href="#experience" active={activeSection === "experience"} heroPassed={heroPassed}>
-						04.Experience
+					<NavLink href="#contact" active={activeSection === "contact"}>
+						04. CONTACT
 					</NavLink>
-				</div>
-
-				<div className="hidden md:flex gap-4 items-center">
-					<IconTerminal className="w-5 h-5 text-[#bdcab8] cursor-pointer duration-200 hover:text-[#67df70]" />
-					<IconSettings className="w-5 h-5 text-[#bdcab8] cursor-pointer duration-200 hover:text-[#67df70]" />
 				</div>
 
 				<button className="md:hidden text-[#67df70]">

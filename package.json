@@ -11,6 +11,7 @@
 		"opencode": "opencode -s ses_114235ae7ffe9EZskyByAvc8Lb"
 	},
 	"dependencies": {
+		"@emailjs/browser": "^4.4.1",
 		"@tailwindcss/vite": "^4.3.1",
 		"react": "^19.2.6",
 		"react-dom": "^19.2.6",

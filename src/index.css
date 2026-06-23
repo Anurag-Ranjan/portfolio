@@ -8,6 +8,11 @@
 		"opsz" 24;
 }
 
+::selection {
+	background-color: rgba(103, 223, 112, 0.3);
+	color: #dde5d8;
+}
+
 @keyframes blink {
 	0%,
 	50% {
