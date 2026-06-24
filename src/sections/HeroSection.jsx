@@ -1,4 +1,6 @@
 import { PROFILE_IMG } from "../constants/profileimage";
+import logo from "../assets/bit-sindri-logo.png";
+import resumePdf from "../assets/Anurag_Ranjan_Resume.pdf";
 
 /**
  * HeroSection
@@ -85,6 +87,7 @@ function IconCode({ className = "" }) {
 export default function HeroSection() {
 	return (
 		<div
+			id="overview"
 			className="font-['JetBrains_Mono',monospace] text-[14px] leading-[1.5] font-normal antialiased min-h-screen flex flex-col relative"
 			style={{ backgroundColor: "#0D1117", color: "#E6EDF3" }}
 		>
@@ -104,16 +107,25 @@ export default function HeroSection() {
 					</div>
 
 					<div className="mt-8 flex flex-col gap-3 w-full">
-						<button className="bg-[#238636] hover:bg-[#2ea043] text-white px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-colors flex items-center gap-2 justify-center w-full">
+						<button
+							onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+							className="bg-[#238636] hover:bg-[#2ea043] text-white px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-colors flex items-center gap-2 justify-center w-full cursor-pointer"
+						>
 							<IconFolderOpen className="w-[18px] h-[18px]" />[ View Projects ]
 						</button>
-						<button className="border border-[#30363D] text-[#7D8590] hover:text-[#3FB950] hover:border-[#3FB950] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2 justify-center w-full">
+						<button
+							onClick={() => window.open(resumePdf, "_blank")}
+							className="border border-[#30363D] text-[#7D8590] hover:text-[#3FB950] hover:border-[#3FB950] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2 justify-center w-full cursor-pointer"
+						>
 							<IconDescription className="w-[18px] h-[18px]" />[ Resume ]
 						</button>
 					</div>
 
 					<div className="mt-4 flex gap-4 w-full justify-center">
-						<button className="border border-[#30363D] text-[#7D8590] hover:text-[#E6EDF3] hover:border-[#E6EDF3] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2 w-full justify-center">
+						<button
+							onClick={() => window.open("https://github.com/Anurag-Ranjan", "_blank")}
+							className="border border-[#30363D] text-[#7D8590] hover:text-[#E6EDF3] hover:border-[#E6EDF3] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2 w-full justify-center cursor-pointer"
+						>
 							<IconCode className="w-[18px] h-[18px]" />[ GitHub ]
 						</button>
 					</div>
@@ -216,23 +228,26 @@ export default function HeroSection() {
 				className="mt-auto border-t border-[#3e4a3c] w-full"
 				style={{ backgroundColor: "#091009" }}
 			>
-				<div className="flex justify-between items-center px-4 md:px-12 py-2 max-w-[1200px] mx-auto w-full">
-					<span className="text-[#a0d39c] font-bold text-[13px] leading-[1.6] font-['JetBrains_Mono',monospace]">
-						SYSTEM STATUS: ONLINE | 2024
-					</span>
-					<div className="hidden md:flex gap-4 text-[13px] leading-[1.6] font-['JetBrains_Mono',monospace]">
-						<span className="text-[#bdcab8] hover:text-[#a0d39c] transition-opacity cursor-pointer">
-							Dhanbad, IN
-						</span>
-						<span className="text-[#bdcab8] hover:text-[#a0d39c] transition-opacity cursor-pointer">
-							B.Tech CSE
-						</span>
-						<span className="text-[#bdcab8] hover:text-[#a0d39c] transition-opacity cursor-pointer">
-							CGPA: 8.23
-						</span>
+				<div className="flex items-center gap-4 px-4 md:px-12 py-3 max-w-[1200px] mx-auto w-full">
+					<div className="flex items-center gap-4 min-w-0">
+						<img
+							src={logo}
+							alt="BIT Sindri Logo"
+							className="w-12 h-12 rounded-full object-contain shrink-0 border border-[#3e4a3c]"
+							style={{ backgroundColor: "#0D1117" }}
+						/>
+						<div className="flex flex-col gap-0.5 text-[13px] leading-[1.6] font-['JetBrains_Mono',monospace]">
+							<span className="text-[#a0d39c] font-bold">B.I.T. Sindri</span>
+							<span className="text-[#bdcab8]">B.Tech, Computer Science and Engineering</span>
+							<span className="text-[#bdcab8]">Aug 2023 – Present · Dhanbad, Jharkhand</span>
+							<span className="text-[#bdcab8]">8.3 / 10 CGPA</span>
+						</div>
 					</div>
-					<div className="flex md:hidden text-[#bdcab8] text-[13px] leading-[1.6] font-['JetBrains_Mono',monospace]">
-						Dhanbad, IN | B.Tech CSE | 8.23
+					<div className="ml-auto shrink-0 flex items-center gap-2 font-['JetBrains_Mono',monospace]">
+						<span className="w-2 h-2 rounded-full bg-[#3fb950] animate-[blink_1s_step-start_infinite]" />
+						<span className="text-[11px] tracking-[0.05em] text-[#3fb950] font-medium whitespace-nowrap">
+							AVAILABLE FOR HIRE
+						</span>
 					</div>
 				</div>
 			</footer>

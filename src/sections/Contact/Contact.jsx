@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import resumePdf from "../../assets/Anurag_Ranjan_Resume.pdf";
 import emailjs from "@emailjs/browser";
-import { publicKey, serviceId, templateId } from "../../constants/emailjsconstants";
+import {
+	publicKey,
+	serviceId,
+	templateId,
+} from "../../constants/emailjsconstants";
 
 // ─── token reference ─────────────────────────────────────────────────────────
 // background:              #0D1117
@@ -112,7 +116,12 @@ export default function Contact() {
 		if (!email || !message) return;
 		setSending(true);
 		try {
-			await emailjs.send(serviceId, templateId, { from_email: email, message }, publicKey);
+			await emailjs.send(
+				serviceId,
+				templateId,
+				{ from_email: email, message },
+				publicKey,
+			);
 			setEmail("");
 			setMessage("");
 			setSuccessMsg("Query sent successfully");
@@ -130,13 +139,13 @@ export default function Contact() {
 		const fetchStats = async () => {
 			try {
 				const userRes = await fetch(
-					`https://api.github.com/users/${GITHUB_USER}`
+					`https://api.github.com/users/${GITHUB_USER}`,
 				);
 				if (!userRes.ok) throw new Error("Failed to fetch user");
 				const userData = await userRes.json();
 
 				const reposRes = await fetch(
-					`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`
+					`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`,
 				);
 				if (!reposRes.ok) throw new Error("Failed to fetch repos");
 				const reposData = await reposRes.json();
@@ -144,14 +153,13 @@ export default function Contact() {
 				const langCounts = {};
 				reposData.forEach((r) => {
 					if (r.language) {
-						langCounts[r.language] =
-							(langCounts[r.language] || 0) + 1;
+						langCounts[r.language] = (langCounts[r.language] || 0) + 1;
 					}
 				});
 
 				const totalLangRepos = Object.values(langCounts).reduce(
 					(a, b) => a + b,
-					0
+					0,
 				);
 				const topLangs = Object.entries(langCounts)
 					.sort((a, b) => b[1] - a[1])
@@ -162,7 +170,7 @@ export default function Contact() {
 					}));
 
 				const commitRes = await fetch(
-					`https://api.github.com/search/commits?q=author:${GITHUB_USER}`
+					`https://api.github.com/search/commits?q=author:${GITHUB_USER}`,
 				);
 				let totalCommits = 0;
 				if (commitRes.ok) {
@@ -213,7 +221,11 @@ export default function Contact() {
 								<span className="text-[#3FB950] font-bold">
 									anurag@portfolio:~$
 								</span>
-								<span className="text-[#dde5d8]"> github stats{loading ? " (fetching...)" : ""}</span>
+								<span className="text-[#dde5d8]">
+									{" "}
+									github stats{loading ? " (fetching...)" : ""}
+								</span>
+								<span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]" />
 							</div>
 
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#dde5d8]">
@@ -229,8 +241,14 @@ export default function Contact() {
 										</thead>
 										<tbody>
 											{[
-												{ label: "Public Repos", value: stats?.publicRepos ?? "—" },
-												{ label: "Commits", value: stats?.totalCommits?.toLocaleString() ?? "—" },
+												{
+													label: "Public Repos",
+													value: stats?.publicRepos ?? "—",
+												},
+												{
+													label: "Commits",
+													value: stats?.totalCommits?.toLocaleString() ?? "—",
+												},
 											].map(({ label, value }) => (
 												<tr
 													key={label}
@@ -256,13 +274,19 @@ export default function Contact() {
 													percent={lang.percent}
 													barColor={LANG_COLORS[lang.label] || "#67df70"}
 												/>
-										  ))
+											))
 										: !loading && (
 												<p className="text-[#bdcab8] text-[13px] leading-[1.6]">
 													No language data available
 												</p>
-										  )}
+											)}
 								</div>
+							</div>
+
+							<div className="mt-6">
+								<span className="animate-[blink_1s_step-start_infinite] text-[#67df70] font-bold">
+									_
+								</span>
 							</div>
 						</div>
 					</TerminalCard>
@@ -276,6 +300,7 @@ export default function Contact() {
 									anurag@portfolio:~$
 								</span>
 								<span className="text-[#dde5d8]"> download resume.pdf</span>
+								<span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]" />
 							</div>
 
 							<div className="flex items-center gap-4 text-[#dde5d8]">
@@ -294,15 +319,21 @@ export default function Contact() {
 									Download
 								</a>
 							</div>
+
+							<div className="mt-4">
+								<span className="animate-[blink_1s_step-start_infinite] text-[#67df70] font-bold">
+									_
+								</span>
+							</div>
 						</div>
 					</TerminalCard>
 
 					{/* ── Handshake prompt ───────────────────────────────────────── */}
 					<p className="text-3xl leading-relaxed text-[#dde5d8] font-['JetBrains_Mono',monospace] px-1 mt-8">
-						<span className="text-[#67df70]">Looking</span>{" "}
-						for a developer who enjoys solving
+						<span className="text-[#67df70]">Looking</span> for a developer who
+						enjoys solving
 						<br />
-						real-world engineering problems.{" "}
+						real-world engineering problems?{" "}
 						<span className="text-[#67df70]">Let's talk.</span>
 					</p>
 
@@ -315,6 +346,7 @@ export default function Contact() {
 									anurag@portfolio:~$
 								</span>
 								<span className="text-[#dde5d8]"> contact</span>
+								<span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]" />
 							</div>
 
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -335,6 +367,21 @@ export default function Contact() {
 													mail
 												</span>
 												anuragran07@gmail.com
+											</a>
+										</li>
+										{/* Phone */}
+										<li>
+											<a
+												href="tel:+917979850249"
+												className="flex items-center gap-2 hover:text-[#67df70] transition-colors group"
+											>
+												<span className="text-[#bdcab8] group-hover:text-[#67df70]">
+													&gt;
+												</span>
+												<span className="material-symbols-outlined text-[18px] text-[#bdcab8] group-hover:text-[#67df70]">
+													call
+												</span>
+												+91 7979850249
 											</a>
 										</li>
 										{/* LinkedIn */}
@@ -429,6 +476,12 @@ export default function Contact() {
 										)}
 									</div>
 								</div>
+							</div>
+
+							<div className="mt-4">
+								<span className="animate-[blink_1s_step-start_infinite] text-[#67df70] font-bold">
+									_
+								</span>
 							</div>
 						</div>
 					</TerminalCard>

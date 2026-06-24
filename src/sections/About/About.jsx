@@ -13,7 +13,8 @@ export default function About() {
 						<span className="text-[#67df70] font-bold">
 							anurag@portfolio:~$
 						</span>
-						{" cat about.txt\n\n"}
+						<span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]"> cat about.txt</span>
+						{"\n\n"}
 						<span style={{ color: "#ffb2bb" }}>name:</span>
 						{"      "}
 						<span style={{ color: "#a0d39c" }}>Anurag Ranjan</span>
@@ -55,7 +56,7 @@ export default function About() {
 							Always building. Always learning.
 						</span>
 						{"\n"}
-						<span className="animate-pulse text-[#67df70] font-bold">_</span>
+						<span className="animate-[blink_1s_step-start_infinite] text-[#67df70] font-bold">_</span>
 					</div>
 				</TerminalWindow>
 			</main>

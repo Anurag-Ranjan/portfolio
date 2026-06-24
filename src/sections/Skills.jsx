@@ -44,6 +44,7 @@ export default function Skills() {
 								anurag@portfolio:~$
 							</span>
 							<span className="text-[#dde5d8]"> skills --list</span>
+							<span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]" />
 						</div>
 
 						<div className="flex flex-col gap-8">
@@ -143,7 +144,7 @@ export default function Skills() {
 						</div>
 
 						<div className="mt-6">
-							<span className="animate-pulse text-[#67df70] font-bold">_</span>
+							<span className="animate-[blink_1s_step-start_infinite] text-[#67df70] font-bold">_</span>
 						</div>
 					</div>
 				</TerminalWindow>

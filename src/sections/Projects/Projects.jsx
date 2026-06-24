@@ -63,7 +63,9 @@ export default function ProjectsSection() {
 								</div>
 								<div className="flex gap-2">
 									<a
-										href="#"
+										href="https://github.com/Anurag-Ranjan/inductly"
+										target="_blank"
+										rel="noopener noreferrer"
 										aria-label="GitHub Repository"
 										className="p-2 border border-[#30363D] rounded-[0.125rem] text-[#bdcab8] hover:text-[#67df70] hover:border-[#67df70] transition-all"
 									>
@@ -146,7 +148,9 @@ export default function ProjectsSection() {
 								</div>
 								<div className="flex gap-2">
 									<a
-										href="#"
+										href="https://github.com/Bytebrigade-AttendX/attendance-backend"
+										target="_blank"
+										rel="noopener noreferrer"
 										aria-label="GitHub Repository"
 										className="p-2 border border-[#30363D] rounded-[0.125rem] text-[#bdcab8] hover:text-[#67df70] hover:border-[#67df70] transition-all"
 									>
@@ -229,7 +233,9 @@ export default function ProjectsSection() {
 								</div>
 								<div className="flex gap-2">
 									<a
-										href="#"
+										href="https://github.com/Anurag-Ranjan/Chatty"
+										target="_blank"
+										rel="noopener noreferrer"
 										aria-label="GitHub Repository"
 										className="p-2 border border-[#30363D] rounded-[0.125rem] text-[#bdcab8] hover:text-[#67df70] hover:border-[#67df70] transition-all"
 									>

@@ -34,12 +34,12 @@ function NavLink({ href, children, active }) {
 	);
 }
 
-const SECTION_IDS = ["about", "projects", "skills", "contact"];
+const SECTION_IDS = ["overview", "about", "projects", "skills", "contact"];
 
 export default function Header() {
 	const [scrolled, setScrolled] = useState(false);
 	const [heroPassed, setHeroPassed] = useState(false);
-	const [activeSection, setActiveSection] = useState("about");
+	const [activeSection, setActiveSection] = useState("overview");
 	const [floatingStyle, setFloatingStyle] = useState(null);
 	const ratiosRef = useRef({});
 	const navbarMarkerRef = useRef(null);
@@ -75,7 +75,7 @@ export default function Header() {
 				});
 
 				if (!best && window.scrollY < window.innerHeight * 0.5) {
-					best = "about";
+					best = "overview";
 				}
 
 				setActiveSection(best);
@@ -173,6 +173,9 @@ export default function Header() {
 					</div>
 
 					<div className="hidden md:flex items-center gap-6 ml-auto">
+						<NavLink href="#overview" active={activeSection === "overview"}>
+							00. OVERVIEW
+						</NavLink>
 						<NavLink href="#about" active={activeSection === "about"}>
 							01. ABOUT
 						</NavLink>
