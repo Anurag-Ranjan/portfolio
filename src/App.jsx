@@ -7,11 +7,7 @@ import Skills from "./sections/Skills";
 import Contact from "./sections/Contact/Contact";
 import PageFooter from "./components/PageFooter";
 import emailjs from "@emailjs/browser";
-import {
-	publicKey,
-	serviceId,
-	templateId,
-} from "./constants/emailjsconstants";
+import { publicKey, serviceId, templateId } from "./constants/emailjsconstants";
 
 emailjs.init(publicKey);
 
@@ -23,13 +19,14 @@ function App() {
 
 	useEffect(() => {
 		let cancelled = false;
+		console.log(publicKey);
+		console.log(templateId);
+		console.log(serviceId);
 
 		const fetchStats = async () => {
 			try {
 				const [userRes, reposRes] = await Promise.all([
-					fetch(
-						`https://api.github.com/users/${GITHUB_USER}`,
-					),
+					fetch(`https://api.github.com/users/${GITHUB_USER}`),
 					fetch(
 						`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`,
 					),
