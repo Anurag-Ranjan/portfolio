@@ -24,9 +24,7 @@ export default function ProjectsSection() {
 		>
 			<div className="pt-28 pb-16 px-4 md:px-12 max-w-[1200px] mx-auto w-full">
 				<div className="mb-6 text-[13px] leading-[1.6] flex items-center gap-2">
-					<span className="text-[#67df70] font-bold">
-						anurag@portfolio:~$
-					</span>
+					<span className="text-[#67df70] font-bold">anurag@portfolio:~$</span>
 					<span className="text-[#dde5d8]">ls projects</span>
 					<span className="w-2 h-4 bg-[#67df70] animate-pulse inline-block align-middle ml-1" />
 				</div>
@@ -86,10 +84,10 @@ export default function ProjectsSection() {
 							</div>
 
 							<p className="text-[14px] leading-relaxed text-[#dde5d8] mb-6">
-								A comprehensive club induction management platform
-								streamlining the recruitment process with multi-stage
-								workflows, dynamic forms, and role-based access control.
-								Built for scale and operational efficiency.
+								A comprehensive club induction management platform streamlining
+								the recruitment process with multi-stage workflows, dynamic
+								forms, and role-based access control. Built for scale and
+								operational efficiency.
 							</p>
 
 							<div className="mb-6">
@@ -97,10 +95,10 @@ export default function ProjectsSection() {
 									Key Features
 								</h4>
 								<ul className="space-y-2">
-									<FeatureItem text="Multi-stage recruitment workflow automation" />
+									<FeatureItem text="Multi-stage recruitment workflow" />
 									<FeatureItem text="Dynamic customizable application forms" />
 									<FeatureItem text="Granular Role-Based Access Control (RBAC)" />
-									<FeatureItem text="Real-time collaborative candidate evaluation" />
+									<FeatureItem text="Real-time analytics dashboards" />
 								</ul>
 							</div>
 
@@ -109,7 +107,15 @@ export default function ProjectsSection() {
 									Tech Stack
 								</h4>
 								<div className="flex flex-wrap gap-2">
-									{[ "[ React ]", "[ Node.js ]", "[ PostgreSQL ]", "[ Redis ]", "[ BullMQ ]", "[ Docker ]", "[ Jest ]" ].map((t) => (
+									{[
+										"[ React ]",
+										"[ Node.js ]",
+										"[ PostgreSQL ]",
+										"[ Redis ]",
+										"[ BullMQ ]",
+										"[ Docker ]",
+										"[ Jest ]",
+									].map((t) => (
 										<TechBadge key={t} label={t} />
 									))}
 								</div>
@@ -172,9 +178,9 @@ export default function ProjectsSection() {
 
 							<p className="text-[14px] leading-relaxed text-[#dde5d8] mb-6">
 								A React Native mobile app for automated, fraud-resistant
-								attendance tracking using GPS geofencing. Eliminates manual
-								roll calls and proxy attendance with location-verified
-								check-ins backed by a robust backend.
+								attendance tracking using GPS geofencing. Eliminates manual roll
+								calls and proxy attendance with location-verified check-ins
+								backed by a robust backend.
 							</p>
 
 							<div className="mb-6">
@@ -182,10 +188,9 @@ export default function ProjectsSection() {
 									Key Features
 								</h4>
 								<ul className="space-y-2">
-									<FeatureItem text="GPS geofencing for location-verified check-ins" />
-									<FeatureItem text="Automated session management with Redis TTL" />
+									<FeatureItem text="GPS geofencing for location-verified attendances" />
+									<FeatureItem text="Automated session management with Redis" />
 									<FeatureItem text="Real-time attendance dashboards for faculty" />
-									<FeatureItem text="Proxy attendance prevention via device binding" />
 								</ul>
 							</div>
 
@@ -194,7 +199,13 @@ export default function ProjectsSection() {
 									Tech Stack
 								</h4>
 								<div className="flex flex-wrap gap-2">
-									{[ "[ React Native ]", "[ Expo ]", "[ Node.js ]", "[ PostgreSQL ]", "[ Redis ]" ].map((t) => (
+									{[
+										"[ React Native ]",
+										"[ Expo ]",
+										"[ Node.js ]",
+										"[ PostgreSQL ]",
+										"[ Redis ]",
+									].map((t) => (
 										<TechBadge key={t} label={t} />
 									))}
 								</div>
@@ -256,10 +267,9 @@ export default function ProjectsSection() {
 							</div>
 
 							<p className="text-[14px] leading-relaxed text-[#dde5d8] mb-6">
-								Built a real-time MERN-stack chat application with
-								Socket.IO, achieving message delivery latency as low as
-								5ms, secure JWT authentication, anonymous chatting, and
-								customizable themes.
+								Built a real-time MERN-stack chat application with Socket.IO,
+								achieving message delivery latency as low as 5ms, secure JWT
+								authentication, anonymous chatting, and customizable themes.
 							</p>
 
 							<div className="mb-6">
@@ -280,7 +290,15 @@ export default function ProjectsSection() {
 									Tech Stack
 								</h4>
 								<div className="flex flex-wrap gap-2">
-									{[ "[ MongoDB ]", "[ Express.js ]", "[ React.js ]", "[ Node.js ]", "[ Socket.IO ]", "[ JWT ]", "[ Vite ]" ].map((t) => (
+									{[
+										"[ MongoDB ]",
+										"[ Express.js ]",
+										"[ React.js ]",
+										"[ Node.js ]",
+										"[ Socket.IO ]",
+										"[ JWT ]",
+										"[ Vite ]",
+									].map((t) => (
 										<TechBadge key={t} label={t} />
 									))}
 								</div>
