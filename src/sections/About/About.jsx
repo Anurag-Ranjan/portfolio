@@ -13,7 +13,10 @@ export default function About() {
 						<span className="text-[#67df70] font-bold">
 							anurag@portfolio:~$
 						</span>
-						<span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]"> cat about.txt</span>
+						<span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]">
+							{" "}
+							cat about.txt
+						</span>
 						{"\n\n"}
 						<span style={{ color: "#ffb2bb" }}>name:</span>
 						{"      "}
@@ -48,15 +51,17 @@ export default function About() {
 						{"  - Backend Development\n"}
 						{"  - Full Stack Architecture\n"}
 						{"  - DevOps & Cloud Infrastructure\n"}
-						{"  - Open Source Contributions\n"}
-						{"  - Artificial Intelligence / Machine Learning\n\n"}
+						{"  - Distributed Systems & Scalability\n"}
+						{"  - API Design & Integration\n"}
 						<span style={{ color: "#ffb2bb" }}>status:</span>
 						{"     "}
 						<span style={{ color: "#67df70" }}>
 							Always building. Always learning.
 						</span>
 						{"\n"}
-						<span className="animate-[blink_1s_step-start_infinite] text-[#67df70] font-bold">_</span>
+						<span className="animate-[blink_1s_step-start_infinite] text-[#67df70] font-bold">
+							_
+						</span>
 					</div>
 				</TerminalWindow>
 			</main>
