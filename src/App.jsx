@@ -19,9 +19,6 @@ function App() {
 
 	useEffect(() => {
 		let cancelled = false;
-		console.log(publicKey);
-		console.log(templateId);
-		console.log(serviceId);
 
 		const fetchStats = async () => {
 			try {
@@ -101,12 +98,16 @@ function App() {
 	}, []);
 
 	const handleSend = async (email, message) => {
-		await emailjs.send(
-			serviceId,
-			templateId,
-			{ from_email: email, message },
-			publicKey,
-		);
+		try {
+			await emailjs.send(
+				serviceId,
+				templateId,
+				{ from_email: email, message },
+				publicKey,
+			);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return (
