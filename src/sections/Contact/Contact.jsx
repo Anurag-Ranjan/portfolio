@@ -1,11 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import resumePdf from "../../assets/Anurag_Ranjan_Resume.pdf";
-import emailjs from "@emailjs/browser";
-import {
-	publicKey,
-	serviceId,
-	templateId,
-} from "../../constants/emailjsconstants";
 
 // ─── token reference ─────────────────────────────────────────────────────────
 // background:              #0D1117
@@ -102,26 +96,17 @@ const LANG_COLORS = {
 	Ruby: "#701516",
 };
 
-const GITHUB_USER = "Anurag-Ranjan";
-
-export default function Contact() {
+export default function Contact({ stats, loading, onSend }) {
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
 	const [sending, setSending] = useState(false);
 	const [successMsg, setSuccessMsg] = useState("");
-	const [stats, setStats] = useState(null);
-	const [loading, setLoading] = useState(true);
 
 	const handleSend = async () => {
 		if (!email || !message) return;
 		setSending(true);
 		try {
-			await emailjs.send(
-				serviceId,
-				templateId,
-				{ from_email: email, message },
-				publicKey,
-			);
+			await onSend(email, message);
 			setEmail("");
 			setMessage("");
 			setSuccessMsg("Query sent successfully");
@@ -132,71 +117,6 @@ export default function Contact() {
 			setSending(false);
 		}
 	};
-
-	useEffect(() => {
-		let cancelled = false;
-
-		const fetchStats = async () => {
-			try {
-				const userRes = await fetch(
-					`https://api.github.com/users/${GITHUB_USER}`,
-				);
-				if (!userRes.ok) throw new Error("Failed to fetch user");
-				const userData = await userRes.json();
-
-				const reposRes = await fetch(
-					`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`,
-				);
-				if (!reposRes.ok) throw new Error("Failed to fetch repos");
-				const reposData = await reposRes.json();
-
-				const langCounts = {};
-				reposData.forEach((r) => {
-					if (r.language) {
-						langCounts[r.language] = (langCounts[r.language] || 0) + 1;
-					}
-				});
-
-				const totalLangRepos = Object.values(langCounts).reduce(
-					(a, b) => a + b,
-					0,
-				);
-				const topLangs = Object.entries(langCounts)
-					.sort((a, b) => b[1] - a[1])
-					.slice(0, 3)
-					.map(([label, count]) => ({
-						label,
-						percent: Math.round((count / totalLangRepos) * 100),
-					}));
-
-				const commitRes = await fetch(
-					`https://api.github.com/search/commits?q=author:${GITHUB_USER}`,
-				);
-				let totalCommits = 0;
-				if (commitRes.ok) {
-					const commitData = await commitRes.json();
-					totalCommits = commitData.total_count;
-				}
-
-				if (!cancelled) {
-					setStats({
-						publicRepos: userData.public_repos,
-						totalCommits,
-						topLangs,
-					});
-					setLoading(false);
-				}
-			} catch (err) {
-				console.error("GitHub fetch error:", err);
-				if (!cancelled) setLoading(false);
-			}
-		};
-
-		fetchStats();
-		return () => {
-			cancelled = true;
-		};
-	}, []);
 
 	return (
 		<div
@@ -303,15 +223,17 @@ export default function Contact() {
 								<span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]" />
 							</div>
 
-							<div className="flex items-center gap-4 text-[#dde5d8]">
-								<span className="material-symbols-outlined icon-filled text-[#67df70]">
-									description
-								</span>
-								<span>anurag_ranjan_resume.pdf (124 KB)</span>
+							<div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 text-[#dde5d8]">
+								<div className="flex items-center gap-4 min-w-0">
+									<span className="material-symbols-outlined icon-filled text-[#67df70] shrink-0">
+										description
+									</span>
+									<span className="truncate">anurag_ranjan_resume.pdf (124 KB)</span>
+								</div>
 								<a
 									href={resumePdf}
 									download
-									className="ml-auto bg-[#238636] hover:bg-[#2ea043] text-white px-4 py-2 rounded-[0.125rem] transition-colors flex items-center gap-2 no-underline"
+									className="sm:ml-auto bg-[#238636] hover:bg-[#2ea043] text-white px-4 py-2 rounded-[0.125rem] transition-colors flex items-center gap-2 no-underline shrink-0"
 								>
 									<span className="material-symbols-outlined text-[18px]">
 										download
