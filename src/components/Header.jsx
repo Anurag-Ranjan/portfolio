@@ -80,7 +80,7 @@ export default function Header() {
 
 				setActiveSection(best);
 			},
-			{ threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] }
+			{ threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] },
 		);
 
 		SECTION_IDS.forEach((id) => {
@@ -104,8 +104,10 @@ export default function Header() {
 			const maxScroll = window.innerHeight * 0.75;
 			const progress = Math.min(y / maxScroll, 1);
 
-			const width = heroRect.width + (navbarRect.width - heroRect.width) * progress;
-			const height = heroRect.height + (navbarRect.height - heroRect.height) * progress;
+			const width =
+				heroRect.width + (navbarRect.width - heroRect.width) * progress;
+			const height =
+				heroRect.height + (navbarRect.height - heroRect.height) * progress;
 			const left = heroRect.left + (navbarRect.left - heroRect.left) * progress;
 			const top = heroRect.top + (navbarRect.top - heroRect.top) * progress;
 
@@ -135,7 +137,11 @@ export default function Header() {
 	return (
 		<>
 			{floatingStyle && (
-				<img alt="Anurag Ranjan Profile" src={PROFILE_IMG} style={floatingStyle} />
+				<img
+					alt="Anurag Ranjan Profile"
+					src={PROFILE_IMG}
+					style={floatingStyle}
+				/>
 			)}
 			<nav
 				className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -162,30 +168,30 @@ export default function Header() {
 							className="text-[20px] leading-[1.4] font-semibold"
 							style={{ color: "#67df70" }}
 						>
-							anurag@workstation:~$
+							anurag@portfolio:~$
 						</div>
 					</div>
 
-				<div className="hidden md:flex items-center gap-6 ml-auto">
-					<NavLink href="#about" active={activeSection === "about"}>
-						01. ABOUT
-					</NavLink>
-					<NavLink href="#projects" active={activeSection === "projects"}>
-						02. PROJECTS
-					</NavLink>
-					<NavLink href="#skills" active={activeSection === "skills"}>
-						03. SKILLS
-					</NavLink>
-					<NavLink href="#contact" active={activeSection === "contact"}>
-						04. CONTACT
-					</NavLink>
-				</div>
+					<div className="hidden md:flex items-center gap-6 ml-auto">
+						<NavLink href="#about" active={activeSection === "about"}>
+							01. ABOUT
+						</NavLink>
+						<NavLink href="#projects" active={activeSection === "projects"}>
+							02. PROJECTS
+						</NavLink>
+						<NavLink href="#skills" active={activeSection === "skills"}>
+							03. SKILLS
+						</NavLink>
+						<NavLink href="#contact" active={activeSection === "contact"}>
+							04. CONTACT
+						</NavLink>
+					</div>
 
-				<button className="md:hidden text-[#67df70]">
-					<IconHamburger className="w-6 h-6" />
-				</button>
-			</div>
-		</nav>
+					<button className="md:hidden text-[#67df70]">
+						<IconHamburger className="w-6 h-6" />
+					</button>
+				</div>
+			</nav>
 		</>
 	);
 }

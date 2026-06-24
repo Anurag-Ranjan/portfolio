@@ -89,9 +89,9 @@ export default function HeroSection() {
 			style={{ backgroundColor: "#0D1117", color: "#E6EDF3" }}
 		>
 			{/* Main Content */}
-			<main className="flex-grow pt-32 pb-24 px-4 md:px-12 max-w-[1200px] mx-auto w-full flex flex-col md:flex-row gap-12 items-start justify-center min-h-[80vh]">
+			<main className="flex-grow pt-32 pb-24 px-4 md:px-8 max-w-[1200px] mx-auto w-full flex flex-col md:flex-row gap-12 items-start justify-center min-h-[80vh]">
 				{/* Profile Image Area */}
-				<div className="w-full md:w-[35%] flex flex-col items-center justify-center shrink-0">
+				<div className="w-full md:w-[28%] flex flex-col items-center justify-center shrink-0">
 					<div
 						data-profile-hero
 						className="w-64 h-64 md:w-80 md:h-80 rounded-[0.75rem] overflow-hidden border-2 border-[#3e4a3c] shadow-[0_0_15px_rgba(63,185,80,0.2)] relative invisible"
@@ -103,11 +103,11 @@ export default function HeroSection() {
 						/>
 					</div>
 
-					<div className="mt-8 flex gap-4 w-full justify-center">
-						<button className="bg-[#238636] hover:bg-[#2ea043] text-white px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-colors flex items-center gap-2">
+					<div className="mt-8 flex flex-col gap-3 w-full">
+						<button className="bg-[#238636] hover:bg-[#2ea043] text-white px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-colors flex items-center gap-2 justify-center w-full">
 							<IconFolderOpen className="w-[18px] h-[18px]" />[ View Projects ]
 						</button>
-						<button className="border border-[#30363D] text-[#7D8590] hover:text-[#3FB950] hover:border-[#3FB950] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2">
+						<button className="border border-[#30363D] text-[#7D8590] hover:text-[#3FB950] hover:border-[#3FB950] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2 justify-center w-full">
 							<IconDescription className="w-[18px] h-[18px]" />[ Resume ]
 						</button>
 					</div>
@@ -120,7 +120,7 @@ export default function HeroSection() {
 				</div>
 
 				{/* Terminal Window Hero */}
-				<div className="w-full md:w-[65%] flex flex-col">
+				<div className="w-full md:w-[72%] flex flex-col">
 					<div
 						className="rounded-t-[0.125rem] flex items-center px-4 py-2"
 						style={{
@@ -148,7 +148,7 @@ export default function HeroSection() {
 					</div>
 
 					<div
-						className="rounded-b-[0.125rem] p-6 md:p-8 text-[16px] leading-[1.6] font-normal min-h-[400px]"
+						className="rounded-b-[0.125rem] p-5 md:p-6 text-[16px] leading-[1.6] font-normal min-h-[400px]"
 						style={{
 							backgroundColor: "#161B22",
 							border: "1px solid #30363D",
@@ -187,7 +187,7 @@ export default function HeroSection() {
 							<p className="text-[#7D8590] max-w-2xl text-[13px] leading-[1.6] font-normal">
 								&gt; Executing system check...
 								<br />
-								&gt; Modules loaded: Node.js, Python, React, Docker
+								&gt; Modules loaded: concurrency, queue_systems, caching_layers, rest_api, schema_design, monorepo_arch
 								<br />
 								&gt; Status: Ready to architect scalable solutions.
 								<br />

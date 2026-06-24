@@ -33,7 +33,7 @@ export default function ProjectsSection() {
 
 				<div className="grid grid-cols-1 xl:grid-cols-2 gap-[16px] mb-16">
 					<div
-						className="group flex flex-col rounded-[0.125rem] border border-[#30363D] hover:border-[#879484] transition-colors duration-300"
+						className="group flex flex-col rounded-[0.125rem] border border-[#30363D] hover:border-[#879484] transition-colors duration-300 xl:col-span-2"
 						style={{ backgroundColor: "#161B22" }}
 					>
 						<div
@@ -107,7 +107,7 @@ export default function ProjectsSection() {
 									Tech Stack
 								</h4>
 								<div className="flex flex-wrap gap-2">
-									{[ "[ React ]", "[ Node.js ]", "[ PostgreSQL ]", "[ Redis ]", "[ BullMQ ]", "[ Docker ]" ].map((t) => (
+									{[ "[ React ]", "[ Node.js ]", "[ PostgreSQL ]", "[ Redis ]", "[ BullMQ ]", "[ Docker ]", "[ Jest ]" ].map((t) => (
 										<TechBadge key={t} label={t} />
 									))}
 								</div>
@@ -199,48 +199,85 @@ export default function ProjectsSection() {
 					</div>
 
 					<div
-						className="flex flex-col rounded-[0.125rem] border border-[#30363D] opacity-50 relative cursor-not-allowed"
+						className="group flex flex-col rounded-[0.125rem] border border-[#30363D] hover:border-[#879484] transition-colors duration-300"
 						style={{ backgroundColor: "#161B22" }}
 					>
-						<div
-							className="absolute inset-0 flex items-center justify-center z-10 rounded-[0.125rem] backdrop-blur-[2px]"
-							style={{ backgroundColor: "rgba(15,21,14,0.3)" }}
-						>
-							<span
-								className="text-[13px] leading-[1.6] font-['JetBrains_Mono',monospace] border border-[#3e4a3c] px-4 py-2 rounded-[0.125rem] text-[#bdcab8]"
-								style={{ backgroundColor: "#1b2119" }}
-							>
-								IN DEVELOPMENT
-							</span>
-						</div>
-
 						<div
 							className="px-4 py-2 flex items-center justify-between rounded-t-[0.125rem] border-b border-[#30363D]"
 							style={{ backgroundColor: "#21262D" }}
 						>
 							<div className="flex gap-1.5">
-								<div className="w-3 h-3 rounded-[0.75rem] bg-[#30363D]" />
-								<div className="w-3 h-3 rounded-[0.75rem] bg-[#30363D]" />
-								<div className="w-3 h-3 rounded-[0.75rem] bg-[#30363D]" />
+								<div className="w-3 h-3 rounded-[0.75rem] bg-[#FF5F56]" />
+								<div className="w-3 h-3 rounded-[0.75rem] bg-[#FFBD2E]" />
+								<div className="w-3 h-3 rounded-[0.75rem] bg-[#27C93F]" />
 							</div>
 							<span className="text-[11px] leading-[1.6] font-['JetBrains_Mono',monospace] text-[#bdcab8]">
-								~/projects/next_gen.sh
+								~/projects/chatty.sh
 							</span>
 							<div className="w-10" />
 						</div>
 
 						<div className="p-6 flex-1 flex flex-col">
-							<div className="h-6 w-1/3 bg-[#30372e] rounded-[0.125rem] mb-2" />
-							<div className="h-4 w-1/2 bg-[#30372e] rounded-[0.125rem] mb-8" />
-							<div className="space-y-2 mb-6">
-								<div className="h-3 w-full bg-[#30372e] rounded-[0.125rem]" />
-								<div className="h-3 w-5/6 bg-[#30372e] rounded-[0.125rem]" />
-								<div className="h-3 w-4/6 bg-[#30372e] rounded-[0.125rem]" />
+							<div className="flex justify-between items-start mb-4">
+								<div>
+									<h3 className="text-[24px] leading-[1.2] font-semibold md:text-[20px] md:leading-[1.4] md:font-semibold text-[#dde5d8] mb-1 group-hover:text-[#67df70] transition-colors">
+										Chatty
+									</h3>
+									<p className="text-[14px] leading-[1.5] text-[#bdcab8]">
+										Real-Time Chat Application
+									</p>
+								</div>
+								<div className="flex gap-2">
+									<a
+										href="#"
+										aria-label="GitHub Repository"
+										className="p-2 border border-[#30363D] rounded-[0.125rem] text-[#bdcab8] hover:text-[#67df70] hover:border-[#67df70] transition-all"
+									>
+										<span className="material-symbols-outlined text-[18px]">
+											code
+										</span>
+									</a>
+									<a
+										href="#"
+										aria-label="Live Demo"
+										className="p-2 border border-[#30363D] rounded-[0.125rem] text-[#bdcab8] hover:text-[#67df70] hover:border-[#67df70] transition-all"
+									>
+										<span className="material-symbols-outlined text-[18px]">
+											open_in_new
+										</span>
+									</a>
+								</div>
 							</div>
-							<div className="mt-auto flex gap-2">
-								<div className="h-6 w-16 bg-[#30372e] rounded-[0.125rem]" />
-								<div className="h-6 w-16 bg-[#30372e] rounded-[0.125rem]" />
-								<div className="h-6 w-16 bg-[#30372e] rounded-[0.125rem]" />
+
+							<p className="text-[14px] leading-relaxed text-[#dde5d8] mb-6">
+								Built a real-time MERN-stack chat application with
+								Socket.IO, achieving message delivery latency as low as
+								5ms, secure JWT authentication, anonymous chatting, and
+								customizable themes.
+							</p>
+
+							<div className="mb-6">
+								<h4 className="text-[12px] leading-none tracking-[0.05em] font-medium text-[#bdcab8] mb-3 uppercase">
+									Key Features
+								</h4>
+								<ul className="space-y-2">
+									<FeatureItem text="Real-time messaging with Socket.IO (5ms latency)" />
+									<FeatureItem text="Secure JWT authentication" />
+									<FeatureItem text="Anonymous chatting with customizable themes" />
+									<FeatureItem text="Advanced chat retrieval with online/offline status & unread tracking" />
+									<FeatureItem text="Blocked-user management & scalable REST APIs" />
+								</ul>
+							</div>
+
+							<div className="mt-auto">
+								<h4 className="text-[12px] leading-none tracking-[0.05em] font-medium text-[#bdcab8] mb-3 uppercase">
+									Tech Stack
+								</h4>
+								<div className="flex flex-wrap gap-2">
+									{[ "[ MongoDB ]", "[ Express.js ]", "[ React.js ]", "[ Node.js ]", "[ Socket.IO ]", "[ JWT ]", "[ Vite ]" ].map((t) => (
+										<TechBadge key={t} label={t} />
+									))}
+								</div>
 							</div>
 						</div>
 					</div>
