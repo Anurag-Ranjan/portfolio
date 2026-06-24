@@ -24,9 +24,7 @@ function App() {
 			try {
 				const [userRes, reposRes] = await Promise.all([
 					fetch(`https://api.github.com/users/${GITHUB_USER}`),
-					fetch(
-						`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`,
-					),
+					fetch(`https://api.github.com/users/${GITHUB_USER}/repos`),
 				]);
 
 				if (!userRes.ok || !reposRes.ok)
