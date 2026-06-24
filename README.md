@@ -1,18 +1,67 @@
-# React + Vite
+# anurag-ranjan.dev
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Personal portfolio — built to summarise
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## $ whoami
 
-## React Compiler
+Third-year Computer Science student at BIT Sindri, focused on backend systems and full-stack development. I build things that handle real complexity — concurrent workflows, async job queues, caching layers — not just CRUD wrapped in a nice UI.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Currently open to **Software Engineering Internships**.
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## $ ls ./stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+Languages     →  TypeScript, JavaScript, Java
+Frontend      →  React, Next.js, React Native, Tailwind CSS
+Backend       →  Node.js, Express, REST APIs
+Databases     →  PostgreSQL, Redis, MongoDB
+Infra/DevOps  →  Docker, Docker Compose, Vercel
+Interests     →  Distributed Systems, Event-driven Architecture, API Design
+```
+
+---
+
+## $ ls ./projects
+
+### [Inductly](https://github.com/anurag-ranjan/inductly)
+
+Student club induction management platform. Built for real concurrent usage — row-level locking for reviewer scoring, BullMQ delayed jobs for email notifications, Redis for analytics caching. Structured as a pnpm monorepo with Docker Compose for local orchestration.
+
+### [AttendX](https://github.com/anurag-ranjan/attendx)
+
+Geolocation-based attendance tracking app built with React Native. Handles location verification and session management for classroom attendance.
+
+### [Clash](https://github.com/anurag-ranjan/clash)
+
+Next.js application with deliberate SSR/CSR splits, background job queues, and response caching. Built around understanding when and why to render where.
+
+---
+
+## $ ./run-locally.sh
+
+```bash
+git clone https://github.com/Anurag-Ranjan/portfolio.git
+cd portfolio
+npm install
+npm run dev
+```
+
+Open [To be added](To be added)
+
+---
+
+## $ curl contact
+
+- **GitHub** → [github.com/anurag-ranjan](https://github.com/anurag-ranjan)
+- **LinkedIn** → [linkedin.com/in/anurag-ranjan](https://linkedin.com/in/anurag-ranjan)
+- **Email** → anuragran07@gmail.com
+
+---
+
+<p align="center">
+  <sub>Built with React · Deployed on Vercel · No template was harmed in the making of this portfolio.</sub>
+</p>
