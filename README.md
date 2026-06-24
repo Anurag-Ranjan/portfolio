@@ -35,9 +35,9 @@ Student club induction management platform. Built for real concurrent usage — 
 
 Geolocation-based attendance tracking app built with React Native. Handles location verification and session management for classroom attendance.
 
-### [Clash](https://github.com/anurag-ranjan/clash)
+### [Chatty](https://github.com/anurag-ranjan/chatty)
 
-Next.js application with deliberate SSR/CSR splits, background job queues, and response caching. Built around understanding when and why to render where.
+A MERN stack application that uses Socket.io to enable real time chats between users with user filtering based on online and offline users and chat filtering based on read and undread messages or blocked chats.
 
 ---
 
