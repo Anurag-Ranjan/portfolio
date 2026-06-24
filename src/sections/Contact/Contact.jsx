@@ -96,7 +96,7 @@ const LANG_COLORS = {
 	Ruby: "#701516",
 };
 
-export default function Contact({ stats, loading, onSend }) {
+export default function Contact({ onSend }) {
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
 	const [sending, setSending] = useState(false);
@@ -134,9 +134,8 @@ export default function Contact({ stats, loading, onSend }) {
 			<main className="flex-grow pb-16 px-4 md:px-12 max-w-[1200px] mx-auto w-full flex flex-col gap-4 lg:flex-row lg:items-start relative z-10 pt-28">
 				<div className="flex-grow flex flex-col gap-4 w-full z-10">
 					{/* ── GitHub Stats Card ──────────────────────────────────────── */}
-					<TerminalCard title="~/github/stats">
+					{/* <TerminalCard title="~/github/stats">
 						<div className="p-6 text-[13px] leading-[1.6] font-['JetBrains_Mono',monospace]">
-							{/* prompt */}
 							<div className="mb-4">
 								<span className="text-[#3FB950] font-bold">
 									anurag@portfolio:~$
@@ -149,7 +148,6 @@ export default function Contact({ stats, loading, onSend }) {
 							</div>
 
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#dde5d8]">
-								{/* Repos table */}
 								<div>
 									<CardSectionHeader>REPOSITORY STATISTICS</CardSectionHeader>
 									<table className="w-full text-left text-[13px] leading-[1.6] font-['JetBrains_Mono',monospace]">
@@ -183,7 +181,6 @@ export default function Contact({ stats, loading, onSend }) {
 									</table>
 								</div>
 
-								{/* Top languages */}
 								<div>
 									<CardSectionHeader>TOP LANGUAGES</CardSectionHeader>
 									{stats?.topLangs?.length
@@ -209,7 +206,7 @@ export default function Contact({ stats, loading, onSend }) {
 								</span>
 							</div>
 						</div>
-					</TerminalCard>
+					</TerminalCard> */}
 
 					{/* ── Resume Download Card ───────────────────────────────────── */}
 					<TerminalCard title="~/documents">
@@ -228,7 +225,9 @@ export default function Contact({ stats, loading, onSend }) {
 									<span className="material-symbols-outlined icon-filled text-[#67df70] shrink-0">
 										description
 									</span>
-									<span className="truncate">anurag_ranjan_resume.pdf (124 KB)</span>
+									<span className="truncate">
+										anurag_ranjan_resume.pdf (124 KB)
+									</span>
 								</div>
 								<a
 									href={resumePdf}
