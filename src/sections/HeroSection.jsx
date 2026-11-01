@@ -30,227 +30,242 @@ import resumePdf from "../assets/Anurag_Ranjan_Resume.pdf";
  */
 
 function IconFolderOpen({ className = "" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			className={className}
-		>
-			<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v1H5" />
-			<path d="M3 7v11a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" />
-		</svg>
-	);
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v1H5" />
+      <path d="M3 7v11a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z" />
+    </svg>
+  );
 }
 
 function IconDescription({ className = "" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			className={className}
-		>
-			<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-			<polyline points="14 2 14 8 20 8" />
-			<line x1="8" y1="13" x2="16" y2="13" />
-			<line x1="8" y1="17" x2="16" y2="17" />
-		</svg>
-	);
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14 2 14 8 20 8" />
+      <line x1="8" y1="13" x2="16" y2="13" />
+      <line x1="8" y1="17" x2="16" y2="17" />
+    </svg>
+  );
 }
 
 function IconCode({ className = "" }) {
-	return (
-		<svg
-			viewBox="0 0 24 24"
-			fill="none"
-			stroke="currentColor"
-			strokeWidth="2"
-			strokeLinecap="round"
-			strokeLinejoin="round"
-			className={className}
-		>
-			<polyline points="16 18 22 12 16 6" />
-			<polyline points="8 6 2 12 8 18" />
-		</svg>
-	);
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <polyline points="16 18 22 12 16 6" />
+      <polyline points="8 6 2 12 8 18" />
+    </svg>
+  );
 }
 
 // ---- main component -----------------------------------------------------
 
 export default function HeroSection() {
-	return (
-		<div
-			id="overview"
-			className="font-['JetBrains_Mono',monospace] text-[14px] leading-[1.5] font-normal antialiased min-h-screen flex flex-col relative"
-			style={{ backgroundColor: "#0D1117", color: "#E6EDF3" }}
-		>
-			{/* Main Content */}
-			<main className="flex-grow pt-32 pb-24 px-4 md:px-8 max-w-[1200px] mx-auto w-full flex flex-col md:flex-row gap-12 items-start justify-center min-h-[80vh]">
-				{/* Profile Image Area */}
-				<div className="w-full md:w-[28%] flex flex-col items-center justify-center shrink-0">
-					<div
-						data-profile-hero
-						className="w-64 h-64 md:w-80 md:h-80 rounded-[0.75rem] overflow-hidden border-2 border-[#3e4a3c] shadow-[0_0_15px_rgba(63,185,80,0.2)] relative invisible"
-					>
-						<img
-							alt="Anurag Ranjan Profile"
-							className="w-full h-full object-cover"
-							src={PROFILE_IMG}
-						/>
-					</div>
+  return (
+    <div
+      id="overview"
+      className="font-['JetBrains_Mono',monospace] text-[14px] leading-[1.5] font-normal antialiased min-h-screen flex flex-col relative"
+      style={{ backgroundColor: "#0D1117", color: "#E6EDF3" }}
+    >
+      {/* Main Content */}
+      <main className="flex-grow pt-32 pb-24 px-4 md:px-8 max-w-[1200px] mx-auto w-full flex flex-col md:flex-row gap-12 items-start justify-center min-h-[80vh]">
+        {/* Profile Image Area */}
+        <div className="w-full md:w-[28%] flex flex-col items-center justify-center shrink-0">
+          <div
+            data-profile-hero
+            className="w-64 h-64 md:w-80 md:h-80 rounded-[0.75rem] overflow-hidden border-2 border-[#3e4a3c] shadow-[0_0_15px_rgba(63,185,80,0.2)] relative invisible"
+          >
+            <img
+              alt="Anurag Ranjan Profile"
+              className="w-full h-full object-cover"
+              src={PROFILE_IMG}
+            />
+          </div>
 
-					<div className="mt-8 flex flex-col gap-3 w-full">
-						<button
-							onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-							className="bg-[#238636] hover:bg-[#2ea043] text-white px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-colors flex items-center gap-2 justify-center w-full cursor-pointer"
-						>
-							<IconFolderOpen className="w-[18px] h-[18px]" />[ View Projects ]
-						</button>
-						<button
-							onClick={() => window.open(resumePdf, "_blank")}
-							className="border border-[#30363D] text-[#7D8590] hover:text-[#3FB950] hover:border-[#3FB950] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2 justify-center w-full cursor-pointer"
-						>
-							<IconDescription className="w-[18px] h-[18px]" />[ Resume ]
-						</button>
-					</div>
+          <div className="mt-8 flex flex-col gap-3 w-full">
+            <button
+              onClick={() =>
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              className="bg-[#238636] hover:bg-[#2ea043] text-white px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-colors flex items-center gap-2 justify-center w-full cursor-pointer"
+            >
+              <IconFolderOpen className="w-[18px] h-[18px]" />[ View Projects ]
+            </button>
+            <a
+              href={resumePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-[#30363D] text-[#7D8590] hover:text-[#3FB950] hover:border-[#3FB950] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2 justify-center w-full"
+            >
+              <IconDescription className="w-[18px] h-[18px]" />[ Resume ]
+            </a>
+          </div>
 
-					<div className="mt-4 flex gap-4 w-full justify-center">
-						<button
-							onClick={() => window.open("https://github.com/Anurag-Ranjan", "_blank")}
-							className="border border-[#30363D] text-[#7D8590] hover:text-[#E6EDF3] hover:border-[#E6EDF3] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2 w-full justify-center cursor-pointer"
-						>
-							<IconCode className="w-[18px] h-[18px]" />[ GitHub ]
-						</button>
-					</div>
-				</div>
+          <div className="mt-4 flex gap-4 w-full justify-center">
+            <button
+              onClick={() =>
+                window.open("https://github.com/Anurag-Ranjan", "_blank")
+              }
+              className="border border-[#30363D] text-[#7D8590] hover:text-[#E6EDF3] hover:border-[#E6EDF3] px-6 py-2 rounded-[0.125rem] text-[12px] leading-none tracking-[0.05em] font-medium transition-all flex items-center gap-2 w-full justify-center cursor-pointer"
+            >
+              <IconCode className="w-[18px] h-[18px]" />[ GitHub ]
+            </button>
+          </div>
+        </div>
 
-				{/* Terminal Window Hero */}
-				<div className="w-full md:w-[72%] flex flex-col">
-					<div
-						className="rounded-t-[0.125rem] flex items-center px-4 py-2"
-						style={{
-							backgroundColor: "#21262D",
-							borderBottom: "1px solid #30363D",
-						}}
-					>
-						<div className="flex gap-2">
-							<div
-								className="w-3 h-3 rounded-[0.75rem]"
-								style={{ backgroundColor: "#ff5f56" }}
-							/>
-							<div
-								className="w-3 h-3 rounded-[0.75rem]"
-								style={{ backgroundColor: "#ffbd2e" }}
-							/>
-							<div
-								className="w-3 h-3 rounded-[0.75rem]"
-								style={{ backgroundColor: "#27c93f" }}
-							/>
-						</div>
-						<div className="flex-grow text-center text-[13px] leading-[1.6] font-normal text-[#7D8590]">
-							~/portfolio/whoami
-						</div>
-					</div>
+        {/* Terminal Window Hero */}
+        <div className="w-full md:w-[72%] flex flex-col">
+          <div
+            className="rounded-t-[0.125rem] flex items-center px-4 py-2"
+            style={{
+              backgroundColor: "#21262D",
+              borderBottom: "1px solid #30363D",
+            }}
+          >
+            <div className="flex gap-2">
+              <div
+                className="w-3 h-3 rounded-[0.75rem]"
+                style={{ backgroundColor: "#ff5f56" }}
+              />
+              <div
+                className="w-3 h-3 rounded-[0.75rem]"
+                style={{ backgroundColor: "#ffbd2e" }}
+              />
+              <div
+                className="w-3 h-3 rounded-[0.75rem]"
+                style={{ backgroundColor: "#27c93f" }}
+              />
+            </div>
+            <div className="flex-grow text-center text-[13px] leading-[1.6] font-normal text-[#7D8590]">
+              ~/portfolio/whoami
+            </div>
+          </div>
 
-					<div
-						className="rounded-b-[0.125rem] p-5 md:p-6 text-[16px] leading-[1.6] font-normal min-h-[400px]"
-						style={{
-							backgroundColor: "#161B22",
-							border: "1px solid #30363D",
-							borderTop: "none",
-						}}
-					>
-						<div className="mb-4">
-							<span className="font-bold" style={{ color: "#67df70" }}>
-								anurag@portfolio:~$
-							</span>{" "}
-							<span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]">
-								whoami
-							</span>
-						</div>
+          <div
+            className="rounded-b-[0.125rem] p-5 md:p-6 text-[16px] leading-[1.6] font-normal min-h-[400px]"
+            style={{
+              backgroundColor: "#161B22",
+              border: "1px solid #30363D",
+              borderTop: "none",
+            }}
+          >
+            <div className="mb-4">
+              <span className="font-bold" style={{ color: "#67df70" }}>
+                anurag@portfolio:~$
+              </span>{" "}
+              <span className="after:content-['▋'] after:animate-[blink_1s_step-start_infinite]">
+                whoami
+              </span>
+            </div>
 
-						<div className="mt-6 space-y-4">
-							<h1 className="text-[48px] leading-[1.1] tracking-[-0.02em] font-bold text-[#E6EDF3] mb-2">
-								Anurag Ranjan
-							</h1>
+            <div className="mt-6 space-y-4">
+              <h1 className="text-[48px] leading-[1.1] tracking-[-0.02em] font-bold text-[#E6EDF3] mb-2">
+                Anurag Ranjan
+              </h1>
 
-							<div className="flex flex-wrap gap-2 mb-6">
-								<span
-									className="border border-[#30363D] px-2 py-1 text-[13px] leading-[1.6] font-normal"
-									style={{ color: "#67df70" }}
-								>
-									[ Full Stack Developer ]
-								</span>
-								<span className="border border-[#30363D] px-2 py-1 text-[#E6EDF3] text-[13px] leading-[1.6] font-normal">
-									[ Backend Enthusiast ]
-								</span>
-								<span className="border border-[#30363D] px-2 py-1 text-[#58A6FF] text-[13px] leading-[1.6] font-normal">
-									[ DevOps Learner ]
-								</span>
-							</div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span
+                  className="border border-[#30363D] px-2 py-1 text-[13px] leading-[1.6] font-normal"
+                  style={{ color: "#67df70" }}
+                >
+                  [ Full Stack Developer ]
+                </span>
+                <span className="border border-[#30363D] px-2 py-1 text-[#E6EDF3] text-[13px] leading-[1.6] font-normal">
+                  [ Backend Enthusiast ]
+                </span>
+                <span className="border border-[#30363D] px-2 py-1 text-[#58A6FF] text-[13px] leading-[1.6] font-normal">
+                  [ DevOps Learner ]
+                </span>
+              </div>
 
-							<p className="text-[#7D8590] max-w-2xl text-[13px] leading-[1.6] font-normal">
-								&gt; Executing system check...
-								<br />
-								&gt; Modules loaded: concurrency, queue_systems, caching_layers, rest_api, schema_design, monorepo_arch
-								<br />
-								&gt; Status: Ready to architect scalable solutions.
-								<br />
-								<br />
-								Building high-performance web applications bridging the gap
-								between elegant interfaces and robust backend architectures.
-								Focused on clean code and system reliability.
-								<br />
-								<span className="text-[#3FB950]">
-									&gt; Status: Open to Software Engineering Internships
-								</span>
-							</p>
-						</div>
+              <p className="text-[#7D8590] max-w-2xl text-[13px] leading-[1.6] font-normal">
+                &gt; Executing system check...
+                <br />
+                &gt; Modules loaded: concurrency, queue_systems, caching_layers,
+                rest_api, schema_design, monorepo_arch
+                <br />
+                &gt; Status: Ready to architect scalable solutions.
+                <br />
+                <br />
+                Building high-performance web applications bridging the gap
+                between elegant interfaces and robust backend architectures.
+                Focused on clean code and system reliability.
+                <br />
+                <span className="text-[#3FB950]">
+                  &gt; Status: Open to Software Engineering Internships
+                </span>
+              </p>
+            </div>
 
-						<div className="mt-8">
-							<span className="font-bold" style={{ color: "#67df70" }}>
-								anurag@portfolio:~$
-							</span>
-							<span className="text-[#67df70] ml-2 animate-[blink_1s_step-start_infinite]">_</span>
-						</div>
-					</div>
-				</div>
-			</main>
+            <div className="mt-8">
+              <span className="font-bold" style={{ color: "#67df70" }}>
+                anurag@portfolio:~$
+              </span>
+              <span className="text-[#67df70] ml-2 animate-[blink_1s_step-start_infinite]">
+                _
+              </span>
+            </div>
+          </div>
+        </div>
+      </main>
 
-			<footer
-				className="mt-auto border-t border-[#3e4a3c] w-full"
-				style={{ backgroundColor: "#091009" }}
-			>
-				<div className="flex items-center gap-4 px-4 md:px-12 py-3 max-w-[1200px] mx-auto w-full">
-					<div className="flex items-center gap-4 min-w-0">
-						<img
-							src={logo}
-							alt="BIT Sindri Logo"
-							className="w-12 h-12 rounded-full object-contain shrink-0 border border-[#3e4a3c]"
-							style={{ backgroundColor: "#0D1117" }}
-						/>
-						<div className="flex flex-col gap-0.5 text-[13px] leading-[1.6] font-['JetBrains_Mono',monospace]">
-							<span className="text-[#a0d39c] font-bold">B.I.T. Sindri</span>
-							<span className="text-[#bdcab8]">B.Tech, Computer Science and Engineering</span>
-							<span className="text-[#bdcab8]">Aug 2023 – Present · Dhanbad, Jharkhand</span>
-							<span className="text-[#bdcab8]">8.3 / 10 CGPA</span>
-						</div>
-					</div>
-					<div className="ml-auto shrink-0 flex items-center gap-2 font-['JetBrains_Mono',monospace]">
-						<span className="w-2 h-2 rounded-full bg-[#3fb950] animate-[blink_1s_step-start_infinite]" />
-						<span className="text-[11px] tracking-[0.05em] text-[#3fb950] font-medium whitespace-nowrap">
-							AVAILABLE FOR HIRE
-						</span>
-					</div>
-				</div>
-			</footer>
-		</div>
-	);
+      <footer
+        className="mt-auto border-t border-[#3e4a3c] w-full"
+        style={{ backgroundColor: "#091009" }}
+      >
+        <div className="flex items-center gap-4 px-4 md:px-12 py-3 max-w-[1200px] mx-auto w-full">
+          <div className="flex items-center gap-4 min-w-0">
+            <img
+              src={logo}
+              alt="BIT Sindri Logo"
+              className="w-12 h-12 rounded-full object-contain shrink-0 border border-[#3e4a3c]"
+              style={{ backgroundColor: "#0D1117" }}
+            />
+            <div className="flex flex-col gap-0.5 text-[13px] leading-[1.6] font-['JetBrains_Mono',monospace]">
+              <span className="text-[#a0d39c] font-bold">B.I.T. Sindri</span>
+              <span className="text-[#bdcab8]">
+                B.Tech, Computer Science and Engineering
+              </span>
+              <span className="text-[#bdcab8]">
+                Aug 2023 – Present · Dhanbad, Jharkhand
+              </span>
+              <span className="text-[#bdcab8]">8.3 / 10 CGPA</span>
+            </div>
+          </div>
+          <div className="ml-auto shrink-0 flex items-center gap-2 font-['JetBrains_Mono',monospace]">
+            <span className="w-2 h-2 rounded-full bg-[#3fb950] animate-[blink_1s_step-start_infinite]" />
+            <span className="text-[11px] tracking-[0.05em] text-[#3fb950] font-medium whitespace-nowrap">
+              AVAILABLE FOR HIRE
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
